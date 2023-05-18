@@ -2,7 +2,7 @@ CREATE TABLE persones
 (
     id SERIAL PRIMARY KEY,
     login VARCHAR (30),
-    passwod VARCHAR (30),
+    pass VARCHAR (30),
     email VARCHAR (30)
 );
 
