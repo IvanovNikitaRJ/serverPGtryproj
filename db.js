@@ -4,8 +4,8 @@ user: "postgres",
 password: "fucklinux",
 host: "localhost",
 port: 5432,
-database: node_postgres_test
+database: "nodejs_postgresql_test"
 }
 );
 
-module.export = pool;
+module.exports = pool;

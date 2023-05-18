@@ -1,8 +1,14 @@
+const db = require('../db')
+
 class userController{
     async createUser(req,res){
-        const {login, email, password} = req.body;
-        console.log(login, email,password);
-        res.json('ok');
+        const {login, email, passwod} = req.body;
+        const newPerson = await db.query(
+        `INSERT INTO persones (login, passwod, email) VALUES ($1, $2, $3) RETURNING *`,
+        [login, passwod, email]);
+        res.json(newPerson.rows(0));
+
+
     }
     async getAllUsers(req,res){
         
@@ -18,4 +24,4 @@ class userController{
     }
 }
 
-module.export = new new userController();
+module.exports = new userController();
