@@ -27,12 +27,6 @@ class userController{
         const user = await db.query(`DELETE FROM persones WHERE id = $1`, [id]);
         res.json(user.rows[0]);
     }
-    async auth(req,res){
-        const login = req.params.login;
-        const pass = req.params.pass;
-        const user = await db.query (`SELECT * FROM persones WHERE login = $1 AND pass = $2`, [login, pass]);
-        res.json(user.rows[0]);
-        }
 }
 
 module.exports = new userController();
